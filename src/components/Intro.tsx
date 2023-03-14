@@ -52,7 +52,40 @@ export default function Intro() {
             <h2 className="text-center font-extrabold text-3xl text-brownish-attention mb-8"> Technical </h2>
 
             <p className="pb-5">
-                The basic system would work like that. As of now it&rsquo;s just a CRUD. So not actually complete.
+                The basic system would work like that. As of now it&rsquo;s just a CRUD. So not actually complete. In fact we are missing the transfer feature, thus making the currency not movable between accounts.
+                It would be a stretch to even call it an economy at the current state it is. But anyway:
+            </p>
+
+            <p className="pb-5">
+                This is the base URL: <a href="" className="text-brownish-attention underline"> api.arielcarvalho.io:3001 </a>
+            </p>
+
+            <p className="pb-5">
+                Available routes are:
+            </p>
+
+            <p className="pb-5">
+                <span className="text-brownish-attention">POST</span> api.arielcarvalho.io:3001/api/v1/user
+            </p>
+
+            <p className="pb-5">
+                <span className="text-brownish-attention">POST</span> api.arielcarvalho.io:3001/api/v1/session
+            </p>
+
+            <p className="pb-5 ">
+                <span className="text-brownish-attention">POST</span> api.arielcarvalho.io:3001/api/v1/funds:[username]
+            </p>
+
+            <p className="pb-5">
+                <span className="text-brownish-attention">PUT</span> api.arielcarvalho.io:3001/api/v1/funds
+            </p>
+
+            <p className="pb-5">
+                <span className="text-brownish-attention">GET</span> api.arielcarvalho.io:3001/api/v1/funds:[username]
+            </p>
+
+            <p className="pb-5">
+                <span className="text-brownish-attention">GET</span> api.arielcarvalho.io:3001/api/v1/user:[username]
             </p>
 
         </main>
