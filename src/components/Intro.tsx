@@ -4,6 +4,8 @@ export default function Intro() {
     const peanut = "/peanutsvg.svg";
     const illustration1 = "/illustration1.svg";
     const illustration2 = "/illustration2.svg";
+    const databaselayout = "/databaselayout.svg";
+    const cactus = "/cactus.svg";
 
     return(
         <main className="border-black lg:w-[1000px] mx-auto
@@ -15,7 +17,7 @@ export default function Intro() {
             <Image className="block mx-auto my-8" src={peanut} width={146} height={150} alt=""/>
 
             <p className="pb-5 mt-12 lg:mt-20"> 
-                Interact with the API here: <span className="text-brownish-attention underline"> <a href=""> api.arielcarvalho.io:3001 </a> </span> <br />
+                Interact with the API here: <span className="text-brownish-attention underline"> <a href="http://api.arielcarvalho.io:3001" target="_blank"> api.arielcarvalho.io:3001 </a> </span> <br />
                 or continue reading for documentation. 
             </p>
 
@@ -59,34 +61,34 @@ export default function Intro() {
             </p>
 
             <p className="pb-5">
-                This is the base URL: <a href="" className="text-brownish-attention underline"> api.arielcarvalho.io:3001 </a>
+                This is the base URL: <a href="http://api.arielcarvalho.io:3001" target="_blank" className="text-brownish-attention underline"> api.arielcarvalho.io:3001 </a>
             </p>
 
             <p className="pb-5">
                 Available routes are:
             </p>
 
-            <p className="pb-5">
+            <p className="pb-5 break-all">
                 <span className="text-brownish-attention">POST</span> api.arielcarvalho.io:3001/api/v1/user
             </p>
 
-            <p className="pb-5">
+            <p className="pb-5 break-all">
                 <span className="text-brownish-attention">POST</span> api.arielcarvalho.io:3001/api/v1/session
             </p>
 
-            <p className="pb-5 ">
+            <p className="pb-5 break-all">
                 <span className="text-brownish-attention">POST</span> api.arielcarvalho.io:3001/api/v1/funds:[username]
             </p>
 
-            <p className="pb-5">
+            <p className="pb-5 break-all">
                 <span className="text-brownish-attention">PUT</span> api.arielcarvalho.io:3001/api/v1/funds
             </p>
 
-            <p className="pb-5">
+            <p className="pb-5 break-all">
                 <span className="text-brownish-attention">GET</span> api.arielcarvalho.io:3001/api/v1/funds:[username]
             </p>
 
-            <p className="pb-5">
+            <p className="pb-5 break-all">
                 <span className="text-brownish-attention">GET</span> api.arielcarvalho.io:3001/api/v1/user:[username]
             </p>
 
@@ -97,7 +99,7 @@ export default function Intro() {
 
             <p className="pb-5">
                 This backend is <span className="text-brownish-attention">RESTful</span> and you can use an API testing/development platform to make requests and interact with it.
-                 I personally use <span className="text-brownish-attention underline"> <a href="insomnia.rest"> insomnia </a></span>.
+                 I personally use <span className="text-brownish-attention underline"> <a href="http://insomnia.rest" target="_blank"> insomnia</a></span>.
                 Following is a brief explanation of what each route does, what is needed per request and the attributes for the JSON.
             </p>
 
@@ -190,7 +192,7 @@ export default function Intro() {
             <h3 className="pb-5 pt-10 text-brownish-attention font-semibold"> CLAIM FUND </h3>
 
             <p className="pb-5">
-                A request to this route will claim an available fund. Let&rsquo;s say you just visited a profile (it could be yours it could be someone else&rsquo;s) and you see there&rsquo;s an available fund that hasn&rsquo;t been claimed yet. This is endpoint is how you claim it.
+                A request to this route will claim an available fund. Let&rsquo;s say you just visited a profile (it could be yours it could be someone else&rsquo;s) and you see there&rsquo;s an available fund that hasn&rsquo;t been claimed yet. This endpoint is how you do it.
             </p>
             
             <p className="pb-5 break-all">
@@ -237,11 +239,39 @@ export default function Intro() {
                 Requesting to it is also pretty straightforward. We don&rsquo;t need to be logged in or a request body.
             </p>
             
-            <p className="pb-5 break-all">
+            <p className="pb-20 break-all">
                 <span className="text-brownish-attention">GET</span> api.arielcarvalho.io:3001/api/v1/funds:pliskin
             </p>
             
 
+
+
+
+            <h2 className="text-center font-extrabold text-3xl text-brownish-attention mb-8"> Database design </h2>
+
+            <p className="pb-5">
+                The database is normalized and there&rsquo;s a total of 3 tables.
+                Tokens (funds) get a separate table so that we can keep as much information on them as possible.
+            </p>
+
+            <p className="pb-5">
+                There&rsquo;s a one-to-one relationship between the user table and the account table. Meaning each user can only have one account. <br />
+                There&rsquo;s also a one-to-many relationship between account and the fund table. That leaves the account table in the middle, being the link between user table and fund table.
+            </p>
+
+            <p className="pb-5">
+                This is an idea of how they&rsquo;re laid out and what it looks like:
+            </p>
+
+            <Image className="block mx-auto my-8 mt-14 mb-32" src={databaselayout} width={964} height={195} alt=""/>
+
+            <h2 className="text-center font-extrabold text-3xl text-brownish-attention mb-8"> Conclusion </h2>
+
+            <p className="pb-28">
+                That&rsquo;s about it. Have fun {":)"}
+            </p>
+            
+            <Image className="block mx-auto my-8 mt-14 mb-28" src={cactus} width={54} height={85} alt=""/>
         </main>
     )
 }
