@@ -271,7 +271,7 @@ export default function Intro() {
                 That&rsquo;s about it. Have fun {":)"}
             </p>
             
-            <Image className="block mx-auto my-8 mt-14 mb-28" src={cactus} width={54} height={85} alt=""/>
+            <a href="https://www.arielcarvalho.io/"> <Image className="block mx-auto my-8 mt-14 mb-28" src={cactus} width={54} height={85} alt=""/> </a>
         </main>
     )
 }
