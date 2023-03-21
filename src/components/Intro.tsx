@@ -87,6 +87,18 @@ export default function Intro() {
                 You will need to copy that URL and paste it in your browser. The API is already serving your landing page, you can access it using the link.
             </p>
 
+
+            <h2 className="text-center font-extrabold text-3xl text-brownish-attention mb-8"> Technical </h2>
+
+            <p className="pb-5">
+                Basically how everything works is: A nodejs controller will take the request and proccess all the information received in the http request body. 
+                Then a service responsable to generate the landing page will call on a series of python scripts that will take the chosen theme and make a completely new site
+                with completely new files around the provided information. <br />
+                That is then served back to the user.
+            </p>
+
+
+
             <h2 className="text-center font-extrabold text-3xl text-brownish-attention mb-8"> Conclusion </h2>
 
             <p className="pb-28">
