@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       colors: {
         brownish: {
-          attention: "#A75D5D",
+          attention: "red",
 
         }
       }
